@@ -18,7 +18,6 @@ const CountryPage = () => {
   const { data, loading } = useFetch(
     `https://restcountries.com/v3.1/alpha/${id}`
   );
-  console.log(data);
   return (
     <Container maxWidth="lg">
       {loading ? (
@@ -37,7 +36,7 @@ const CountryPage = () => {
               </Button>
             </Link>
           </Box>
-          <Grid container spacing="4">
+          <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
               <CardMedia
                 component="img"
@@ -60,7 +59,7 @@ const CountryPage = () => {
                     {data[0].name.common}
                   </Typography>
 
-                  <Grid container spacing="4">
+                  <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                       <Typography sx={{ mb: 1.5, fontWeight: "500" }}>
                         Native Name:
@@ -157,6 +156,7 @@ const CountryPage = () => {
                             fontSize={"1rem"}
                             fontWeight={300}
                             sx={{ marginLeft: ".5rem" }}
+                            key={key}
                           >
                             {data[0].languages[key]},
                           </Typography>
@@ -186,6 +186,7 @@ const CountryPage = () => {
                             <Link
                               to={`/country/${border.toLowerCase()}`}
                               style={{ margin: "0.5rem" }}
+                              key={border}
                             >
                               <Button variant="contained" gutterBottom>
                                 {border}

@@ -59,7 +59,6 @@ function App() {
         setRegion("");
     }
   };
-  // console.log(data);
 
   return (
     <ThemeProvider theme={darkTheme}>

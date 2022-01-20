@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container, Box, CircularProgress } from "@material-ui/core";
+import { Grid, Container, CircularProgress } from "@material-ui/core";
 import CountryCard from "./CountryCard";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,6 @@ const Content = ({ data, loading, search, region }) => {
                 c.region.includes(region)
             )
             .map((country) => {
-              console.log(country);
               return (
                 <Grid item xs={12} sm={6} lg={3} key={country.alpha2Code}>
                   <Link to={`/country/${country.alpha2Code.toLowerCase()}`}>
